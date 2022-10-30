@@ -3,8 +3,18 @@ require_once __DIR__ . "/../head.php";
 require_once __DIR__ . "../header.php";
 ?>
 
-<div id="chart"></div>
-<div id="chart2"></div>
+<body class="mainBody">
+
+    <div class="container meuContainer">
+        <div class="div1" id="chart1"></div>
+        <div class="div2" id="chart2"></div>
+        <div class="div3" id="chart3"></div>
+        <div class="div5" id="chart5"></div>
+        <div class="div4" id="chart4"></div>
+    </div>
+
+</body>
+
 
 <?php
 /* Getting demo_viewer table data */
@@ -18,72 +28,229 @@ $dogsJSON = json_encode($dogsArray);
 ?>
 
 <script>
-    $(document).ready(function() {
-        $('#headerTitle').text("General info charts about dogs");
-        $('#headerImg').attr("src", "./../imgs/dog2.png");
-        var data = <?php echo $dogsJSON ?>;
+$(document).ready(function() {
+    $('#headerTitle').text("General info charts about dogs");
+    $('#headerImg').attr("src", "./../imgs/dog2.png");
+    var data = <?php echo $dogsJSON ?>;
 
-        popularDogsTop10 = get10PopularDogs(data);
-        var processed_json = new Array();
-        for (i = 0; i < popularDogsTop10.length; i++) {
-            processed_json.push([popularDogsTop10[i].Breed, parseInt(popularDogsTop10[i].max_weight)]);
-        }
+    popularDogsTop10 = get10PopularDogs(data);
+    var processed_json = new Array();
+    for (i = 0; i < popularDogsTop10.length; i++) {
+        processed_json.push([popularDogsTop10[i].Breed, parseInt(popularDogsTop10[i].max_weight)]);
+    }
 
-        var processed_json2 = new Array();
-        for (i = 0; i < popularDogsTop10.length; i++) {
-            processed_json2.push([popularDogsTop10[i].Breed, parseInt(popularDogsTop10[i].max_height)]);
-        }
-        // draw chart
-        $('#chart').highcharts({
-            chart: {
-                type: "pie"
-            },
+    var processed_json2 = new Array();
+    for (i = 0; i < popularDogsTop10.length; i++) {
+        processed_json2.push([popularDogsTop10[i].Breed, parseInt(popularDogsTop10[i].max_height)]);
+    }
+
+    //For 2nd chart
+    var processed_json3 = new Array();
+        processed_json3.push([popularDogsTop10[0].Breed, parseInt(popularDogsTop10[0].max_height)]);
+        processed_json3.push([popularDogsTop10[0].Breed, parseInt(popularDogsTop10[0].min_height)]);
+        processed_json3.push([popularDogsTop10[0].Breed, parseInt(popularDogsTop10[0].max_weight)]);
+        processed_json3.push([popularDogsTop10[0].Breed, parseInt(popularDogsTop10[0].min_weight)]);
+    var processed_json4 = new Array();
+        processed_json4.push([popularDogsTop10[1].Breed, parseInt(popularDogsTop10[1].max_height)]);
+        processed_json4.push([popularDogsTop10[1].Breed, parseInt(popularDogsTop10[1].min_height)]);
+        processed_json4.push([popularDogsTop10[1].Breed, parseInt(popularDogsTop10[1].max_weight)]);
+        processed_json4.push([popularDogsTop10[1].Breed, parseInt(popularDogsTop10[1].max_weight)]);
+    // draw chart
+    $('#chart1').highcharts({
+        chart: {
+            backgroundColor: '#FFF5EB',
+            type: "bar",
+            options3d: {
+                enabled: true,
+                alpha: 15,
+                beta: 15,
+                depth: 50,
+                viewDistance: 25
+            }
+        },
+        title: {
+            text: "Doggos2"
+        },
+        xAxis: {
+            allowDecimals: false,
             title: {
-                text: "Doggos"
-            },
-            xAxis: {
-                allowDecimals: false,
-                title: {
-                    text: "Breed"
-                }
-            },
-            yAxis: {
-                title: {
-                    text: "Popularity"
-                }
-
-            },
-            colors: ['#82A8D2', '#6AF9C4', '#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572', '#FF9655', '#FFF263'],
-            series: [{
-                data: processed_json
-            }],
-            credits: false
-        });
-
-        $('#chart2').highcharts({
-            chart: {
-                type: "pie"
-            },
+                text: "Breed"
+            }
+        },
+        yAxis: {
             title: {
-                text: "Doggos"
-            },
-            xAxis: {
-                allowDecimals: false,
-                title: {
-                    text: "Breed"
-                }
-            },
-            yAxis: {
-                title: {
-                    text: "Popularity"
-                }
+                text: "Popularity"
+            }
 
+        },
+        colors: ['#82A8D2', '#6AF9C4', '#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572',
+            '#FF9655', '#FFF263'
+        ],
+        series: [{
+                data: processed_json3
             },
-            colors: ['#82A8D2', '#6AF9C4', '#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572', '#FF9655', '#FFF263'],
-            series: [{
-                data: processed_json2
-            }],
-            credits: false
-        });
+            {
+                data: processed_json4
+            }
+        ],
+        credits: false
     });
+
+    $('#chart2').highcharts({
+        chart: {
+            backgroundColor: '#FFF5EB',
+            type: "column",
+            options3d: {
+                enabled: true,
+                alpha: 15,
+                beta: 15,
+                depth: 50,
+                viewDistance: 25
+            }
+        },
+        title: {
+            text: "Doggos2"
+        },
+        xAxis: {
+            allowDecimals: false,
+            title: {
+                text: "Breed"
+            }
+        },
+        yAxis: {
+            title: {
+                text: "Popularity"
+            }
+
+        },
+        colors: ['#82A8D2', '#6AF9C4', '#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572',
+            '#FF9655', '#FFF263'
+        ],
+        series: [{
+                data: processed_json3
+            },
+            {
+                data: processed_json4
+            }
+        ],
+        credits: false
+    });
+
+    $('#chart3').highcharts({
+        chart: {
+            backgroundColor: '#FFF5EB',
+            type: "pie",
+            options3d: {
+                enabled: true,
+                alpha: 15,
+                beta: 15,
+                depth: 50,
+                viewDistance: 25
+            }
+        },
+        title: {
+            text: "Doggos3"
+        },
+        xAxis: {
+            allowDecimals: false,
+            title: {
+                text: "Breed"
+            }
+        },
+        yAxis: {
+            title: {
+                text: "Popularity"
+            }
+
+        },
+        colors: ['#82A8D2', '#6AF9C4', '#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572',
+            '#FF9655', '#FFF263'
+        ],
+        series: [{
+                data: processed_json
+            }
+        ],
+        credits: false
+    });
+
+    $('#chart4').highcharts({
+        chart: {
+            backgroundColor: '#FFF5EB',
+            type: "area",
+            options3d: {
+                enabled: true,
+                alpha: 15,
+                beta: 15,
+                depth: 50,
+                viewDistance: 25
+            }
+        },
+        title: {
+            text: "Doggos4"
+        },
+        xAxis: {
+            allowDecimals: false,
+            title: {
+                text: "Breed"
+            }
+        },
+        yAxis: {
+            title: {
+                text: "Popularity"
+            }
+
+        },
+        colors: ['#82A8D2', '#6AF9C4', '#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572',
+            '#FF9655', '#FFF263'
+        ],
+        series: [{
+                data: processed_json
+            },
+            {
+                data: processed_json2
+            }
+        ],
+        credits: false
+    });
+
+    $('#chart5').highcharts({
+        chart: {
+            backgroundColor: '#FFF5EB',
+            type: "areaspline",
+            options3d: {
+                enabled: true,
+                alpha: 15,
+                beta: 15,
+                depth: 50,
+                viewDistance: 25
+            }
+        },
+        title: {
+            text: "Doggos5"
+        },
+        xAxis: {
+            allowDecimals: false,
+            title: {
+                text: "Breed"
+            }
+        },
+        yAxis: {
+            title: {
+                text: "Popularity"
+            }
+
+        },
+        colors: ['#82A8D2', '#6AF9C4', '#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572',
+            '#FF9655', '#FFF263'
+        ],
+        series: [{
+                data: processed_json
+            },
+            {
+                data: processed_json2
+            }
+        ],
+        credits: false
+    });
+});
 </script>
