@@ -22,7 +22,6 @@ $dogsJSON = json_encode($dogsArray);
         $('#headerTitle').text("General info charts about dogs");
         $('#headerImg').attr("src", "./../imgs/dog2.png");
         var data = <?php echo $dogsJSON ?>;
-        // Populate series
 
         popularDogsTop10 = get10PopularDogs(data);
         var processed_json = new Array();
