@@ -1,6 +1,6 @@
 <div id="mySidenav" class="sidenav">
   <a href="#" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="/Adiiu/views/index.php">Home page</a>
+  <a href="/Adiiu/index.php">Home page</a>
   <a href="/Adiiu/views/dogsBreeds.php">Dogs by Breed</a>
   <a href="/Adiiu/views/dogsWeight.php">Dogs by Weight</a>
   <a href="/Adiiu/views/dogsHeight.php">Dogs by Height</a>

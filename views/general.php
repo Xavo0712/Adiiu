@@ -30,7 +30,7 @@ $dogsJSON = json_encode($dogsArray);
 <script>
 $(document).ready(function() {
     $('#headerTitle').text("General info charts about dogs");
-    $('#headerImg').attr("src", "./../imgs/dog2.png");
+    $('#headerImg').attr("src", "./../imgs/generalDog.png");
     var data = <?php echo $dogsJSON ?>;
 
     popularDogsTop10 = get10PopularDogs(data);
