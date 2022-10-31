@@ -55,6 +55,13 @@ $(document).ready(function() {
         processed_json4.push([popularDogsTop10[1].Breed, parseInt(popularDogsTop10[1].min_height)]);
         processed_json4.push([popularDogsTop10[1].Breed, parseInt(popularDogsTop10[1].max_weight)]);
         processed_json4.push([popularDogsTop10[1].Breed, parseInt(popularDogsTop10[1].max_weight)]);
+
+    //For 3rd chart
+    var processed_json5 = new Array();
+    for (i = 0; i < popularDogsTop10.length; i++) {
+        processed_json5.push([popularDogsTop10[i].Breed, parseInt(popularDogsTop10[i].max_expectancy)]);
+    }
+
     // draw chart
     $('#chart1').highcharts({
         chart: {
@@ -167,7 +174,7 @@ $(document).ready(function() {
             '#FF9655', '#FFF263'
         ],
         series: [{
-                data: processed_json
+                data: processed_json5
             }
         ],
         credits: false
