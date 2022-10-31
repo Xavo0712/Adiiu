@@ -46,15 +46,15 @@ $(document).ready(function() {
 
     //For 2nd chart
     var processed_json3 = new Array();
-        processed_json3.push([popularDogsTop10[0].Breed, parseInt(popularDogsTop10[0].max_height)]);
-        processed_json3.push([popularDogsTop10[0].Breed, parseInt(popularDogsTop10[0].min_height)]);
-        processed_json3.push([popularDogsTop10[0].Breed, parseInt(popularDogsTop10[0].max_weight)]);
-        processed_json3.push([popularDogsTop10[0].Breed, parseInt(popularDogsTop10[0].min_weight)]);
+    processed_json3.push([popularDogsTop10[0].Breed, parseInt(popularDogsTop10[0].max_height)]);
+    processed_json3.push([popularDogsTop10[0].Breed, parseInt(popularDogsTop10[0].min_height)]);
+    processed_json3.push([popularDogsTop10[0].Breed, parseInt(popularDogsTop10[0].max_weight)]);
+    processed_json3.push([popularDogsTop10[0].Breed, parseInt(popularDogsTop10[0].min_weight)]);
     var processed_json4 = new Array();
-        processed_json4.push([popularDogsTop10[1].Breed, parseInt(popularDogsTop10[1].max_height)]);
-        processed_json4.push([popularDogsTop10[1].Breed, parseInt(popularDogsTop10[1].min_height)]);
-        processed_json4.push([popularDogsTop10[1].Breed, parseInt(popularDogsTop10[1].max_weight)]);
-        processed_json4.push([popularDogsTop10[1].Breed, parseInt(popularDogsTop10[1].max_weight)]);
+    processed_json4.push([popularDogsTop10[1].Breed, parseInt(popularDogsTop10[1].max_height)]);
+    processed_json4.push([popularDogsTop10[1].Breed, parseInt(popularDogsTop10[1].min_height)]);
+    processed_json4.push([popularDogsTop10[1].Breed, parseInt(popularDogsTop10[1].max_weight)]);
+    processed_json4.push([popularDogsTop10[1].Breed, parseInt(popularDogsTop10[1].max_weight)]);
 
     //For 3rd chart
     var processed_json5 = new Array();
@@ -67,13 +67,10 @@ $(document).ready(function() {
         chart: {
             backgroundColor: '#FFF5EB',
             type: "bar",
-            options3d: {
-                enabled: true,
-                alpha: 15,
-                beta: 15,
-                depth: 50,
-                viewDistance: 25
-            }
+            borderColor: "#333333",
+            borderRadius: 5,
+            borderWidth: 5,
+
         },
         title: {
             text: "Doggos2"
@@ -107,13 +104,10 @@ $(document).ready(function() {
         chart: {
             backgroundColor: '#FFF5EB',
             type: "column",
-            options3d: {
-                enabled: true,
-                alpha: 15,
-                beta: 15,
-                depth: 50,
-                viewDistance: 25
-            }
+            borderColor: "#333333",
+            borderRadius: 5,
+            borderWidth: 5,
+
         },
         title: {
             text: "Doggos2"
@@ -147,13 +141,10 @@ $(document).ready(function() {
         chart: {
             backgroundColor: '#FFF5EB',
             type: "pie",
-            options3d: {
-                enabled: true,
-                alpha: 15,
-                beta: 15,
-                depth: 50,
-                viewDistance: 25
-            }
+            borderColor: "#333333",
+            borderRadius: 5,
+            borderWidth: 5,
+
         },
         title: {
             text: "Doggos3"
@@ -174,9 +165,8 @@ $(document).ready(function() {
             '#FF9655', '#FFF263'
         ],
         series: [{
-                data: processed_json5
-            }
-        ],
+            data: processed_json5
+        }],
         credits: false
     });
 
@@ -184,13 +174,9 @@ $(document).ready(function() {
         chart: {
             backgroundColor: '#FFF5EB',
             type: "area",
-            options3d: {
-                enabled: true,
-                alpha: 15,
-                beta: 15,
-                depth: 50,
-                viewDistance: 25
-            }
+            borderColor: "#333333",
+            borderRadius: 5,
+            borderWidth: 5,
         },
         title: {
             text: "Doggos4"
@@ -224,13 +210,9 @@ $(document).ready(function() {
         chart: {
             backgroundColor: '#FFF5EB',
             type: "areaspline",
-            options3d: {
-                enabled: true,
-                alpha: 15,
-                beta: 15,
-                depth: 50,
-                viewDistance: 25
-            }
+            borderColor: "#333333",
+            borderRadius: 5,
+            borderWidth: 5,
         },
         title: {
             text: "Doggos5"

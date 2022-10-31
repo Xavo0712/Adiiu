@@ -31,7 +31,7 @@ require_once __DIR__ . "/views/header.php";
     <br>
     <br>
     <h1 style="text-align: center">Why don't you try our other features?</h1>
-    <div class="container">
+    <div class="container" style="margin-bottom: 50px;">
         <div class="row">
             <div class="col-lg-4 homeText">
                 <h3>Texto 1</h3>
