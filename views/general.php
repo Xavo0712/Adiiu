@@ -66,43 +66,6 @@ $(document).ready(function() {
     $('#chart1').highcharts({
         chart: {
             backgroundColor: '#FFF5EB',
-            type: "bar",
-            borderColor: "#333333",
-            borderRadius: 5,
-            borderWidth: 5,
-
-        },
-        title: {
-            text: "Doggos2"
-        },
-        xAxis: {
-            allowDecimals: false,
-            title: {
-                text: "Breed"
-            }
-        },
-        yAxis: {
-            title: {
-                text: "Popularity"
-            }
-
-        },
-        colors: ['#82A8D2', '#6AF9C4', '#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572',
-            '#FF9655', '#FFF263'
-        ],
-        series: [{
-                data: processed_json3
-            },
-            {
-                data: processed_json4
-            }
-        ],
-        credits: false
-    });
-
-    $('#chart2').highcharts({
-        chart: {
-            backgroundColor: '#FFF5EB',
             type: "column",
             borderColor: "#333333",
             borderRadius: 5,
@@ -128,10 +91,47 @@ $(document).ready(function() {
             '#FF9655', '#FFF263'
         ],
         series: [{
-                data: processed_json3
+                data: processed_json
             },
             {
-                data: processed_json4
+                data: processed_json2
+            }
+        ],
+        credits: false
+    });
+
+    $('#chart2').highcharts({
+        chart: {
+            backgroundColor: '#FFF5EB',
+            type: "bar",
+            borderColor: "#333333",
+            borderRadius: 5,
+            borderWidth: 5,
+
+        },
+        title: {
+            text: "Doggos2"
+        },
+        xAxis: {
+            allowDecimals: false,
+            title: {
+                text: "Breed"
+            }
+        },
+        yAxis: {
+            title: {
+                text: "Popularity"
+            }
+
+        },
+        colors: ['#82A8D2', '#6AF9C4', '#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572',
+            '#FF9655', '#FFF263'
+        ],
+        series: [{
+                data: processed_json
+            },
+            {
+                data: processed_json2
             }
         ],
         credits: false
@@ -170,41 +170,6 @@ $(document).ready(function() {
         credits: false
     });
 
-    $('#chart4').highcharts({
-        chart: {
-            backgroundColor: '#FFF5EB',
-            type: "area",
-            borderColor: "#333333",
-            borderRadius: 5,
-            borderWidth: 5,
-        },
-        title: {
-            text: "Doggos4"
-        },
-        xAxis: {
-            allowDecimals: false,
-            title: {
-                text: "Breed"
-            }
-        },
-        yAxis: {
-            title: {
-                text: "Popularity"
-            }
-
-        },
-        colors: ['#82A8D2', '#6AF9C4', '#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572',
-            '#FF9655', '#FFF263'
-        ],
-        series: [{
-                data: processed_json
-            },
-            {
-                data: processed_json2
-            }
-        ],
-        credits: false
-    });
 
     $('#chart5').highcharts({
         chart: {
