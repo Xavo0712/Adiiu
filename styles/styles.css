@@ -40,6 +40,10 @@ body {
   color: var(--main-darkgrey-color);
 }
 
+.homeImg {
+  padding-left: 75px;
+}
+
 .header {
   display: flex;
   height: 200px;
