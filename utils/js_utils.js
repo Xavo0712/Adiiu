@@ -5,3 +5,7 @@ function get10PopularDogs(data) {
 
     return data.slice(0,10);
 }
+
+function redirect(url) {
+    window.location.replace(url);
+}

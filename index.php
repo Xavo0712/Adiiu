@@ -12,7 +12,7 @@ require_once __DIR__ . "/views/header.php";
             <div class="col-lg-6 homeText">
                 <h1>Know more about dogs!</h1>
                 <h3>In our general dog breeds data page, with charts and interesting information of the most important breeds.</h3>
-                <button id="generalButton">Take a look!</button>
+                <button id="generalButton" onclick="redirect('/Adiiu/views/general.php')">Take a look!</button>
             </div>
         </div>
         <br>
@@ -21,7 +21,7 @@ require_once __DIR__ . "/views/header.php";
             <div class="col-lg-6 homeText">
                 <h1>Compare dog breeds</h1>
                 <h3>With our new dog breed comparer tool, so you can choose between those breeds you are doubting on.</h3>
-                <button id="compareButton">Try it now!</button>
+                <button id="compareButton" onclick="redirect('/Adiiu/views/compare.php')">Try it now!</button>
             </div>
             <div class="col-lg-6 homeImg">
                 <img src="./imgs/homeDog2.png" height="300px">
@@ -36,7 +36,7 @@ require_once __DIR__ . "/views/header.php";
             <div class="col-lg-6 homeText">
                 <h1>Get to know your favourite dog breed better!</h1>
                 <h3>Select your favourite dog breed and know its features and compare it to the others dogs' breeds' features.</h3>
-                <button id="generalButton">Take a look!</button>
+                <button id="favouriteButton"  onclick="redirect('/Adiiu/views/favourite.php')">Take a look!</button>
             </div>
         </div>
     </div>
