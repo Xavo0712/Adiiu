@@ -25,6 +25,7 @@ body {
   border-radius: 15px;
   border: 5px solid var(--main-blue-color);
   padding: 7px;
+  background: rgba(250, 250, 250, 0.7);
 }
 
 .mainBody h1 {
@@ -183,4 +184,9 @@ body {
   background-size: cover;
 }
 
-
+.dropdown button {
+  background: rgba(250, 250, 250, 0.8);
+  border-radius: 10px;
+  border-color: var(--main-darkgrey-color);
+  color: var(--main-darkgrey-color);
+}

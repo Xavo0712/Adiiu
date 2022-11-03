@@ -9,3 +9,4 @@ function get10PopularDogs(data) {
 function redirect(url) {
     window.location.replace(url);
 }
+

@@ -36,7 +36,7 @@ require_once __DIR__ . "/views/header.php";
             <div class="col-lg-6 homeText">
                 <h1>Get to know your favourite dog breed better!</h1>
                 <h3>Select your favourite dog breed and know its features and compare it to the others dogs' breeds' features.</h3>
-                <button id="favouriteButton"  onclick="redirect('/Adiiu/views/favourite.php')">Take a look!</button>
+                <button id="favouriteButton" onclick="redirect('/Adiiu/views/favourite.php')">Take a look!</button>
             </div>
         </div>
     </div>
