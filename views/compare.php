@@ -9,6 +9,8 @@ $dogs = mysqli_query($mysqli, $sql);
 ?>
 
 <body class="mainBody">
+    <br>
+    <br>
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
@@ -48,6 +50,8 @@ $dogs = mysqli_query($mysqli, $sql);
 
 <script>
     $(document).ready(function() {
+        $('#headerTitle').text("Comparison tool");
+        $('#headerImg').attr("src", "./../imgs/compareDog.png");
         var select1 = document.querySelector('#dogBreed1');
         dselect(select1, {
             search: true
