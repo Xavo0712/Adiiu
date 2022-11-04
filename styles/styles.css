@@ -162,8 +162,8 @@ body {
   gap: 100px 100px;
   grid-template-areas:
     "div1 div1 div2"
-    "div3 div4 div2"
-    "div5 div5 div5";
+    "div3 divImg div2"
+    "div4 div4 div4";
 }
 .div1 {
   grid-area: div1;
@@ -174,14 +174,20 @@ body {
 .div3 {
   grid-area: div3;
 }
+.div4 {
+  grid-area: div4;
+}
 .div5 {
   grid-area: div5;
 }
-.div4 {
-  grid-area: div4;
+.divImg {
+  grid-area: divImg;
   background-image: url("/Adiiu/imgs/fat dog.gif");
   background-position: center center;
   background-size: cover;
+}
+.div6 {
+  grid-area: div6;
 }
 
 .dropdown button {
@@ -189,4 +195,16 @@ body {
   border-radius: 10px;
   border-color: var(--main-darkgrey-color);
   color: var(--main-darkgrey-color);
+}
+
+.comparisonContainer {
+  margin-top: 75px;
+  margin-bottom: 100px;
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr 1.5fr;
+  grid-template-rows: 1.2fr 1.3fr 1fr;
+  gap: 100px 100px;
+  grid-template-areas:
+    "div1 div2 div3"
+    "div4 div5 div6";
 }

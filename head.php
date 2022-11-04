@@ -1,4 +1,3 @@
-<?php require('utils/db_utils.php'); ?>
 <head>
     <link rel="stylesheet" href="/Adiiu/css/bootstrap.css"/>
     <link rel="stylesheet" href="/Adiiu/styles/styles.css"/>

@@ -9,29 +9,20 @@ require_once __DIR__ . "../header.php";
         <div class="div1" id="chart1"></div>
         <div class="div2" id="chart2"></div>
         <div class="div3" id="chart3"></div>
-        <div class="div5" id="chart5"></div>
         <div class="div4" id="chart4"></div>
+        <div class="divImg" id="gifImg"></div>
     </div>
 
 </body>
-
-
-<?php
-/* Getting demo_viewer table data */
-$sql = "SELECT * FROM mytable";
-$dogs = mysqli_query($mysqli, $sql);
-$dogsArray = array();
-while ($row = $dogs->fetch_assoc()) {
-	$dogsArray[] = $row;
-}
-$dogsJSON = json_encode($dogsArray);
-?>
 
 <script>
 $(document).ready(function() {
     $('#headerTitle').text("General info charts about dogs");
     $('#headerImg').attr("src", "./../imgs/generalDog.png");
-    var data = <?php echo $dogsJSON ?>;
+    var data;
+    getAllDogsData(function(response) {
+        data = response;
+    });
 
     popularDogsTop10 = get10PopularDogs(data);
     var processed_json = new Array();
@@ -171,7 +162,7 @@ $(document).ready(function() {
     });
 
 
-    $('#chart5').highcharts({
+    $('#chart4').highcharts({
         chart: {
             backgroundColor: '#FFF5EB',
             type: "areaspline",
