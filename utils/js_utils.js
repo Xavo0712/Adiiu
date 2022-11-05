@@ -53,6 +53,32 @@ function getComparisonDogsData(Breed1, Breed2) {
     });
 }
 
+function getFavouriteDogsData(Breed1) {
+    $.ajax({
+        type: "GET",
+        url: "/Adiiu/utils/getDogs.php",
+        async: true,
+        success: function(data) {
+            jsonData = JSON.parse(data);
+            dogs = jsonData.filter(function(dog) {
+                return dog.Breed == Breed1;
+            });
+            if(dogs[0]){
+                $('#chart1').highcharts().series[0].setName(dogs[0].Breed);
+                $('#chart1').highcharts().series[0].setData([[dogs[0].Breed, parseInt(dogs[0].popularity)]]);
+                $('#chart2').highcharts().series[0].setName(dogs[0].Breed);
+                $('#chart2').highcharts().series[0].setData([[dogs[0].Breed, (parseInt(dogs[0].min_weight) + parseInt(dogs[0].max_weight))/2]]);
+                $('#chart3').highcharts().series[0].setName(dogs[0].Breed);
+                $('#chart3').highcharts().series[0].setData([[dogs[0].Breed, (parseInt(dogs[0].min_height) + parseInt(dogs[0].max_height))/2]]);
+                $('#chart4').highcharts().series[0].setName(dogs[0].Breed);
+                $('#chart4').highcharts().series[0].setData([[dogs[0].Breed, (parseInt(dogs[0].min_expectancy) + parseInt(dogs[0].max_expectancy))/2]]);
+                $('#chart5').highcharts().series[0].setName(dogs[0].Breed);
+                $('#chart5').highcharts().series[0].setData([[dogs[0].Breed, parseFloat(dogs[0].trainability_value)]]);
+            }
+        }
+    });
+}
+
 function getAllDogsData(callback) {
     $.ajax({
         type: "GET",

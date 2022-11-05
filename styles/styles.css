@@ -208,3 +208,18 @@ body {
     "div1 div2 div3"
     "div4 div5 div6";
 }
+
+.favouriteContainer {
+  margin-top: 75px;
+  margin-bottom: 100px;
+  display: grid; 
+  grid-auto-columns: 1fr; 
+  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 0.6fr 1fr 1fr 1fr; 
+  gap: 50px 50px; 
+  grid-template-areas: 
+    "div1 div1 div2 div3"
+    "div1 div1 div2 div3"
+    "div4 div5 div5 div3"
+    "div4 div6 div6 div3";
+}
