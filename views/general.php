@@ -6,7 +6,8 @@ require_once __DIR__ . "../header.php";
 <body class="mainBody">
 
     <div class="info">
-        <h1> In this page you can see information and comparisons about the 10 most popular dog breeds of our Database. Enjoy!</h1>
+        <h1> In this page you can see information and comparisons about the 10 most popular dog breeds of our Database.
+            Enjoy!</h1>
     </div>
 
     <div class="container meuContainer">
@@ -29,33 +30,37 @@ $(document).ready(function() {
     });
 
     popularDogsTop10 = get10PopularDogs(data);
-    var processed_json = new Array();
+
+    var dogsWeight = new Array();
     for (i = 0; i < popularDogsTop10.length; i++) {
-        processed_json.push([popularDogsTop10[i].Breed, parseInt(popularDogsTop10[i].max_weight)]);
+        dogsWeight.push([popularDogsTop10[i].Breed, (parseInt(popularDogsTop10[i].min_weight) + parseInt(popularDogsTop10[i].max_weight))/2]);
     }
 
-    var processed_json2 = new Array();
+    var dogsHeight = new Array();
     for (i = 0; i < popularDogsTop10.length; i++) {
-        processed_json2.push([popularDogsTop10[i].Breed, parseInt(popularDogsTop10[i].max_height)]);
+        dogsHeight.push([popularDogsTop10[i].Breed, (parseInt(popularDogsTop10[i].min_height) + parseInt(popularDogsTop10[i].max_height))/2]);
     }
 
-    //For 2nd chart
-    var processed_json3 = new Array();
-    processed_json3.push([popularDogsTop10[0].Breed, parseInt(popularDogsTop10[0].max_height)]);
-    processed_json3.push([popularDogsTop10[0].Breed, parseInt(popularDogsTop10[0].min_height)]);
-    processed_json3.push([popularDogsTop10[0].Breed, parseInt(popularDogsTop10[0].max_weight)]);
-    processed_json3.push([popularDogsTop10[0].Breed, parseInt(popularDogsTop10[0].min_weight)]);
-    var processed_json4 = new Array();
-    processed_json4.push([popularDogsTop10[1].Breed, parseInt(popularDogsTop10[1].max_height)]);
-    processed_json4.push([popularDogsTop10[1].Breed, parseInt(popularDogsTop10[1].min_height)]);
-    processed_json4.push([popularDogsTop10[1].Breed, parseInt(popularDogsTop10[1].max_weight)]);
-    processed_json4.push([popularDogsTop10[1].Breed, parseInt(popularDogsTop10[1].max_weight)]);
-
-    //For 3rd chart
-    var processed_json5 = new Array();
+    var dogsMaxExpectancy = new Array();
     for (i = 0; i < popularDogsTop10.length; i++) {
-        processed_json5.push([popularDogsTop10[i].Breed, parseInt(popularDogsTop10[i].max_expectancy)]);
+        dogsMaxExpectancy.push([popularDogsTop10[i].Breed, parseInt(popularDogsTop10[i].max_expectancy)]);
     }
+
+    var dogsMinExpectancy = new Array();
+    for (i = 0; i < popularDogsTop10.length; i++) {
+        dogsMinExpectancy.push([popularDogsTop10[i].Breed, parseInt(popularDogsTop10[i].min_expectancy)]);
+    }
+
+    var dogsShedding = new Array();
+    for (i = 0; i < popularDogsTop10.length; i++) {
+        dogsShedding.push([popularDogsTop10[i].Breed, parseFloat(popularDogsTop10[i].shedding_value)]);
+    }
+
+    var breedNames = new Array();
+    for (i = 0; i < popularDogsTop10.length; i++) {
+        breedNames.push(popularDogsTop10[i].Breed);
+    }
+
 
     // draw chart
     $('#chart1').highcharts({
@@ -68,17 +73,18 @@ $(document).ready(function() {
 
         },
         title: {
-            text: "Doggos2"
+            text: "Mean Weight Comparison"
         },
         xAxis: {
             allowDecimals: false,
             title: {
                 text: "Breed"
-            }
+            },
+            categories: breedNames
         },
         yAxis: {
             title: {
-                text: "Popularity"
+                text: "Kilograms"
             }
 
         },
@@ -86,12 +92,9 @@ $(document).ready(function() {
             '#FF9655', '#FFF263'
         ],
         series: [{
-                data: processed_json
-            },
-            {
-                data: processed_json2
-            }
-        ],
+            data: dogsWeight,
+            name: 'Dogs'
+        }],
         credits: false
     });
 
@@ -105,30 +108,28 @@ $(document).ready(function() {
 
         },
         title: {
-            text: "Doggos2"
+            text: "Mean Height Comparison"
         },
         xAxis: {
             allowDecimals: false,
             title: {
                 text: "Breed"
-            }
+            },
+            categories: breedNames
         },
         yAxis: {
             title: {
-                text: "Popularity"
+                text: "Centimeters"
             }
 
         },
-        colors: ['#82A8D2', '#6AF9C4', '#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572',
+        colors: ['#6AF9C4', '#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572',
             '#FF9655', '#FFF263'
         ],
         series: [{
-                data: processed_json
-            },
-            {
-                data: processed_json2
-            }
-        ],
+            data: dogsHeight,
+            name: 'Dogs'
+        }],
         credits: false
     });
 
@@ -142,7 +143,7 @@ $(document).ready(function() {
 
         },
         title: {
-            text: "Doggos3"
+            text: "Shedding frequency (0 to 1)"
         },
         xAxis: {
             allowDecimals: false,
@@ -152,7 +153,7 @@ $(document).ready(function() {
         },
         yAxis: {
             title: {
-                text: "Popularity"
+                text: "Shedding value"
             }
 
         },
@@ -160,7 +161,8 @@ $(document).ready(function() {
             '#FF9655', '#FFF263'
         ],
         series: [{
-            data: processed_json5
+            data: dogsShedding,
+            name: 'Value'
         }],
         credits: false
     });
@@ -175,28 +177,31 @@ $(document).ready(function() {
             borderWidth: 5,
         },
         title: {
-            text: "Doggos5"
+            text: "Minimum and Maximum expectancies Comparison"
         },
         xAxis: {
             allowDecimals: false,
             title: {
                 text: "Breed"
-            }
+            },
+            categories: breedNames
         },
         yAxis: {
             title: {
-                text: "Popularity"
+                text: "Years"
             }
 
         },
-        colors: ['#82A8D2', '#6AF9C4', '#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572',
+        colors: ['#ED561B', '#24CBE5', '#64E572',
             '#FF9655', '#FFF263'
         ],
         series: [{
-                data: processed_json
+                data: dogsMaxExpectancy,
+            name: 'Maximum Expectancy'
             },
             {
-                data: processed_json2
+                data: dogsMinExpectancy,
+            name: 'Minimum Expectancy'
             }
         ],
         credits: false

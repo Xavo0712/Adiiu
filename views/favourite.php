@@ -47,8 +47,8 @@ while($row = $dogs->fetch_assoc()){
 
 <script>
 $(document).ready(function() {
-    $('#headerTitle').text("Comparison tool");
-    $('#headerImg').attr("src", "./../imgs/compareDog.png");
+    $('#headerTitle').text("Check your favourite dog data");
+    $('#headerImg').attr("src", "./../imgs/favouriteDog.png");
     var select1 = document.querySelector('#dogBreed1');
     dselect(select1, {
         search: true
@@ -73,9 +73,9 @@ $(document).ready(function() {
     var meanDemeanor = 0;
 
     for (i = 0; i < dogs.length; i++) {
-        meanWeight += parseFloat(dogs[i].max_weight);
-        meanHeight += parseFloat(dogs[i].max_height);
-        meanExpectancy += parseFloat(dogs[i].max_expectancy);
+        meanWeight += (parseFloat(dogs[i].max_weight) + parseFloat(dogs[i].min_weight)) / 2;
+        meanHeight +=(parseFloat(dogs[i].max_height) + parseFloat(dogs[i].min_height)) / 2;
+        meanExpectancy += (parseFloat(dogs[i].max_expectancy) + parseFloat(dogs[i].min_expectancy)) / 2;
         meanEnergy += parseFloat(dogs[i].energy_level_value);
         meanDemeanor += parseFloat(dogs[i].demeanor_value);
     }
@@ -104,7 +104,7 @@ $(document).ready(function() {
 
         },
         title: {
-            text: "Maximum Weight Comparison"
+            text: "Mean Weight Comparison"
         },
         xAxis: {
             allowDecimals: false,
@@ -114,7 +114,7 @@ $(document).ready(function() {
         },
         yAxis: {
             title: {
-                text: "Weight"
+                text: "Kilograms"
             }
 
         },
@@ -138,7 +138,7 @@ $(document).ready(function() {
 
         },
         title: {
-            text: "Maximum Expectancy Comparison"
+            text: "Mean Expectancy Comparison"
         },
         xAxis: {
             allowDecimals: false,
@@ -172,7 +172,7 @@ $(document).ready(function() {
 
         },
         title: {
-            text: "Maximum Height Comparison"
+            text: "Mean Height Comparison"
         },
         xAxis: {
             allowDecimals: false,
@@ -182,7 +182,7 @@ $(document).ready(function() {
         },
         yAxis: {
             title: {
-                text: "Height"
+                text: "Centimeters"
             }
 
         },
@@ -206,7 +206,7 @@ $(document).ready(function() {
             borderWidth: 5,
         },
         title: {
-            text: "Energy Level Comparison"
+            text: "Energy Level Comparison (0 to 1)"
         },
         xAxis: {
             allowDecimals: false,
@@ -239,7 +239,7 @@ $(document).ready(function() {
             borderWidth: 5,
         },
         title: {
-            text: "Demeanor Level Comparison"
+            text: "Demeanor Level Comparison (0 to 1)"
         },
         xAxis: {
             allowDecimals: false,
