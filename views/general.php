@@ -5,6 +5,10 @@ require_once __DIR__ . "../header.php";
 
 <body class="mainBody">
 
+    <div class="info">
+        <h1> In this page you can see information and comparisons about the 10 most popular dog breeds of our Database. Enjoy!</h1>
+    </div>
+
     <div class="container meuContainer">
         <div class="div1" id="chart1"></div>
         <div class="div2" id="chart2"></div>
