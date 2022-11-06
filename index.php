@@ -11,7 +11,7 @@ require_once __DIR__ . "/views/header.php";
             </div>
             <div class="col-lg-6 homeText">
                 <h1>Know more about dogs!</h1>
-                <h3>In our general dog breeds data page, with charts and interesting information of the most important breeds.</h3>
+                <h3>In our general dog breeds data page, with charts and interesting information of the most popular and known breeds.</h3>
                 <button id="generalButton" onclick="redirect('/Adiiu/views/general.php')">Take a look!</button>
             </div>
         </div>
@@ -35,7 +35,7 @@ require_once __DIR__ . "/views/header.php";
             </div>
             <div class="col-lg-6 homeText">
                 <h1>Get to know your favourite dog breed better!</h1>
-                <h3>Select your favourite dog breed and know its features and compare it to the others dogs' breeds' features.</h3>
+                <h3>Select your favourite dog breed and check its features comparing them to the others dogs' breeds' features.</h3>
                 <button id="favouriteButton" onclick="redirect('/Adiiu/views/favourite.php')">Take a look!</button>
             </div>
         </div>
@@ -44,7 +44,7 @@ require_once __DIR__ . "/views/header.php";
 
 <script>
     $(document).ready(function() {
-        $('#headerTitle').text("Welcome to this dog page");
+        $('#headerTitle').text("Welcome to the Dog Breeds Data Dashboard");
         $('#headerImg').attr("src", "./imgs/homeDog0.png");
     });
 </script>

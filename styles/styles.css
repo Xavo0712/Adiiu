@@ -35,6 +35,7 @@ body {
   margin-left: 12%;
   background-color: #FFF5EB;
   border-radius: 10px;
+
 }
 
 .mainBody h1 {
@@ -52,6 +53,12 @@ body {
   border-radius: 10px;
   border-color: var(--main-darkgrey-color);
   color: var(--main-darkgrey-color);
+  transition: 0.2s;
+}
+
+.mainBody button:active {
+  font-size: 13px;
+  transition: 0.1s;
 }
 
 .homeImg {
