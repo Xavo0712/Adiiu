@@ -74,7 +74,7 @@ $(document).ready(function() {
 
     for (i = 0; i < dogs.length; i++) {
         meanWeight += (parseFloat(dogs[i].max_weight) + parseFloat(dogs[i].min_weight)) / 2;
-        meanHeight +=(parseFloat(dogs[i].max_height) + parseFloat(dogs[i].min_height)) / 2;
+        meanHeight += (parseFloat(dogs[i].max_height) + parseFloat(dogs[i].min_height)) / 2;
         meanExpectancy += (parseFloat(dogs[i].max_expectancy) + parseFloat(dogs[i].min_expectancy)) / 2;
         meanEnergy += parseFloat(dogs[i].energy_level_value);
         meanDemeanor += parseFloat(dogs[i].demeanor_value);
@@ -98,10 +98,9 @@ $(document).ready(function() {
         chart: {
             backgroundColor: '#FFF5EB',
             type: "bar",
-            borderColor: "#333333",
+            borderColor: "#f1d4b2",
             borderRadius: 5,
             borderWidth: 5,
-
         },
         title: {
             text: "Mean Weight Comparison"
@@ -132,7 +131,7 @@ $(document).ready(function() {
         chart: {
             backgroundColor: '#FFF5EB',
             type: "column",
-            borderColor: "#333333",
+            borderColor: "#f1d4b2",
             borderRadius: 5,
             borderWidth: 5,
 
@@ -166,7 +165,7 @@ $(document).ready(function() {
         chart: {
             backgroundColor: '#FFF5EB',
             type: "column",
-            borderColor: "#333333",
+            borderColor: "#f1d4b2",
             borderRadius: 5,
             borderWidth: 5,
 
@@ -201,7 +200,7 @@ $(document).ready(function() {
         chart: {
             backgroundColor: '#FFF5EB',
             type: "column",
-            borderColor: "#333333",
+            borderColor: "#f1d4b2",
             borderRadius: 5,
             borderWidth: 5,
         },
@@ -234,7 +233,7 @@ $(document).ready(function() {
         chart: {
             backgroundColor: '#FFF5EB',
             type: "bar",
-            borderColor: "#333333",
+            borderColor: "#f1d4b2",
             borderRadius: 5,
             borderWidth: 5,
         },

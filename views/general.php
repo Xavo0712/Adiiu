@@ -67,7 +67,7 @@ $(document).ready(function() {
         chart: {
             backgroundColor: '#FFF5EB',
             type: "column",
-            borderColor: "#333333",
+            borderColor: "#f1d4b2",
             borderRadius: 5,
             borderWidth: 5,
 
@@ -102,7 +102,7 @@ $(document).ready(function() {
         chart: {
             backgroundColor: '#FFF5EB',
             type: "bar",
-            borderColor: "#333333",
+            borderColor: "#f1d4b2",
             borderRadius: 5,
             borderWidth: 5,
 
@@ -137,7 +137,7 @@ $(document).ready(function() {
         chart: {
             backgroundColor: '#FFF5EB',
             type: "pie",
-            borderColor: "#333333",
+            borderColor: "#f1d4b2",
             borderRadius: 5,
             borderWidth: 5,
 
@@ -172,7 +172,7 @@ $(document).ready(function() {
         chart: {
             backgroundColor: '#FFF5EB',
             type: "areaspline",
-            borderColor: "#333333",
+            borderColor: "#f1d4b2",
             borderRadius: 5,
             borderWidth: 5,
         },
